@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "es2020",
+        "module": "es2020",
+        "moduleResolution": "Node",
+        "experimentalDecorators": true, // Enable experimental support for decorators
+        "strict": true,
+        "outDir": "build",
+        "lib": [
+            "WebWorker",
+            "ES2022"
+        ],
+    },
+    "include": [
+        "worker.ts"
+    ]
+}

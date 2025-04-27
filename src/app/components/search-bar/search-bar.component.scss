@@ -1,0 +1,21 @@
+form {
+  display: flex;
+  flex-wrap: nowrap;
+}
+input {
+  &:focus {
+    outline: none;
+    box-shadow: inset var(--cui-btn-bg);
+  }
+}
+#btn-dropdown {
+  font-size: small;
+  width: 90px;
+  height: 100%;
+}
+
+#dropdown-menu {
+  font-size: small;
+  width: 90px;
+  cursor: pointer;
+}

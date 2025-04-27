@@ -1,0 +1,79 @@
+#ctn-video {
+  position: relative;
+  width: 100%; /* Make it responsive */
+  max-width: 800px; /* Adjust to your desired max width */
+  margin: 0 auto; /* Center the video on the page */
+  aspect-ratio: 16 / 9; /* Modern CSS for aspect ratio */
+  display: block;
+}
+
+/* Video Player Section */
+#video-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 3px;
+}
+
+#video-meta {
+  font-size: 0.9rem;
+  margin-bottom: 3px;
+}
+
+#video-description p {
+  font-size: 0.95rem;
+}
+
+.sidebar-video {
+  display: flex;
+  gap: 10px;
+}
+
+.sidebar-thumbnail img {
+  border-radius: 4px;
+}
+.sidebar-thumbnail {
+  border-radius: 4px;
+  max-height: 360px;
+  max-width: 240px;
+  display: inline-block;
+}
+
+.sidebar-title {
+  font-size: 0.95rem;
+  font-weight: bold;
+
+  text-decoration: none;
+}
+
+#buttons {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3px;
+  gap: 2px;
+}
+
+#ctn-channel {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  column-gap: 5px;
+
+  cursor: pointer;
+  p {
+    font-size: 12px;
+    font-weight: 400px;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    margin-bottom: 0px;
+    align-self: center;
+  }
+}
+
+c-card {
+  border: none;
+}

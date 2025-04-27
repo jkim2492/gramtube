@@ -1,0 +1,16 @@
+<form (ngSubmit)="submit()">
+    <c-input-group>
+        <c-dropdown id="dropdown">
+            <button id="btn-dropdown" cButton cDropdownToggle color="secondary" [textContent]="category">
+            </button>
+            <div id="dropdown-menu" cDropdownMenu>
+                <span *ngFor="let category of categories" (click)="setCategory(category)"
+                    cDropdownItem>{{category}}</span>
+            </div>
+        </c-dropdown>
+        <input cFormControl [(ngModel)]="query" name="search" placeholder="Search..." />
+        <button cButton color="secondary" type="button" (click)="submit()">
+            <fa-icon [icon]="faSearch"></fa-icon>
+        </button>
+    </c-input-group>
+</form>

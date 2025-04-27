@@ -1,0 +1,15 @@
+<header class="navbar sticky-top d-flex justify-content-between align-items-center">
+    <div [routerLink]="['/']" role="button" class="navbar-brand d-flex align-self-start">
+        <app-icon class="me-2"></app-icon>
+        <span>GramTube</span>
+    </div>
+
+    <app-search-bar *ngIf="!isLogin() && !isHome()" class="mx-auto"></app-search-bar>
+
+    <div class="d-flex align-self-end align-items-stretch">
+        <a class="mx-1 d-flex align-items-center justify-content-center" href="https://github.com/jkim2492/gramtube">
+            <fa-icon role="button" class="fa-2xl" [icon]="faGithub"></fa-icon>
+        </a>
+        <app-download-dropdown class="flex-fill"></app-download-dropdown>
+    </div>
+</header>

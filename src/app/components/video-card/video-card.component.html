@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="d-flex flex-column flex-sm-row" id="video-card">
+        <div class="flex-shrink-1 flex-sm-shrink-0" id="ctn-thumbnail">
+            <app-video-thumbnail [video]="video"></app-video-thumbnail>
+        </div>
+        <div class="flex-grow-0 flex-sm-grow-1" id="video-details">
+            <a [routerLink]="['/watch']" [queryParams]="{id:video.messageId,channel:video.channelId}"
+                class="video-title">{{
+                video.title }}</a>
+            <p class="video-meta">{{ video.views }} views • {{ video.date }}</p>
+            <div id="ctn-channel">
+                <app-channel-avatar [channel]="video.channel"></app-channel-avatar>
+                <p [routerLink]="['/channel']" [queryParams]="{channel:video.channelId}" class="video-channel">{{
+                    video.channel.title }}</p>
+            </div>
+            <app-tagged-text [description]="video.description" class="video-description"></app-tagged-text>
+        </div>
+    </div>
+</div>

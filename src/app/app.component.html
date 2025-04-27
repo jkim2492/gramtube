@@ -1,0 +1,6 @@
+<app-nav-bar></app-nav-bar>
+<div *ngIf="(controllerLoading || telegramLoading) && !errorMsg" class="spinner-ctn d-flex justify-content-center align-items-center">
+    <app-spinner></app-spinner>
+</div>
+<router-outlet *ngIf="!controllerLoading && !telegramLoading && !errorMsg"></router-outlet>
+<app-error-page [errorMsg]="errorMsg" *ngIf="errorMsg"></app-error-page>

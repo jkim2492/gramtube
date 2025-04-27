@@ -1,0 +1,26 @@
+header {
+  background-color: var(--cui-light);
+  padding-left: 15px;
+  padding-right: 15px;
+  flex-wrap: nowrap;
+}
+.navbar {
+  flex-wrap: nowrap;
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.navbar-brand i {
+  font-size: 1.5rem;
+}
+
+.navbar-brand:hover {
+  cursor: pointer;
+}
+
+fa-icon {
+  color: var(--cui-dark);
+}

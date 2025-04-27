@@ -1,0 +1,8 @@
+<div [routerLink]="['/channel']" [queryParams]="{channel:channel.id}">
+    <c-avatar *ngIf="!channel.avatar || loading" color="secondary" [size]="size">
+        <fa-icon [icon]="faUser"></fa-icon>
+    </c-avatar>
+    <div *ngIf="channel.avatar">
+        <c-avatar #avatar [hidden]="loading" src="{{ channel.avatar }}" [size]="size"></c-avatar>
+    </div>
+</div>

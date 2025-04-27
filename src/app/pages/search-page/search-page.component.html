@@ -1,0 +1,13 @@
+<main class="container my-4" infiniteScroll (scrolled)="onScroll()">
+  <div *ngIf="videoList.length !== 0" class="row gy-3">
+    <div id="video-list" class="col-12">
+      <app-video-card *ngFor="let video of videoList" [video]="video"></app-video-card>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center align-items-center" *ngIf="!isLoading && videoList.length === 0">
+    <h3>No result</h3>
+  </div>
+  <div *ngIf="isLoading" class="d-flex justify-content-center align-items-center">
+    <app-spinner></app-spinner>
+  </div>
+</main>

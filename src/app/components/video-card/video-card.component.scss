@@ -1,0 +1,71 @@
+#video-card {
+  column-gap: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  @media (max-width: 576px) {
+    background-color: #EEEEEE;
+    margin-bottom: 20px;
+  }
+}
+
+app-video-thumbnail {
+  display: block;
+  width: 100%;
+  @media (min-width: 576px) {
+    width: 320px;
+  }
+}
+
+.video-title {
+  white-space: nowrap;
+  font-size: 1rem;
+  font-weight: 400px;
+  line-height: 26px;
+  text-decoration: none;
+}
+.video-meta {
+  font-size: 10px;
+}
+// avatar here should be 24x24
+#ctn-channel {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  column-gap: 5px;
+
+  cursor: pointer;
+  p {
+    font-size: 12px;
+    font-weight: 400px;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    margin-bottom: 0px;
+    align-self: center;
+  }
+}
+
+#video-details {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.video-description {
+  font-size: 12px;
+  font-weight: 400px;
+
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

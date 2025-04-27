@@ -1,0 +1,35 @@
+<div *ngIf="!error" infiniteScroll (scrolled)="onScroll()">
+  <div *ngIf="channel" class="channel-page">
+    <div class="channel-header">
+      <app-channel-avatar size="xl" [channel]="channel"></app-channel-avatar>
+      <div id="channel-info">
+        <h1>{{channel.title}}</h1>
+        <div id="btn-group">
+          <button *ngIf="channel.left" (click)="join()" class="btn btn-secondary">
+            Join
+          </button>
+          <button *ngIf="!channel.left" (click)="leave()" class="btn btn-danger">
+            Leave
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider">
+      <input cFormControl [(ngModel)]="filter" type="text" placeholder="Filter videos by title and message"
+        class="search-bar" (input)="onSearch()" />
+    </div>
+
+    <div class="container" id="video-list">
+      <div class="row">
+        <div class="col-12 col-lg-4 col-xl-3" *ngFor="let video of filteredList">
+          <app-video-card-alt [video]="video"></app-video-card-alt>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+      <app-spinner *ngIf="isLoading"></app-spinner>
+    </div>
+  </div>
+</div>
+<app-error-page *ngIf="error" [errorCode]="error"></app-error-page>

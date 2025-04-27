@@ -1,0 +1,9 @@
+<div id="container">
+    <a [hidden]="loading" [routerLink]="['/watch']" [queryParams]="{id:video.messageId,channel:video.channelId}">
+        <img src="{{ video.thumbnail }}" (load)="onLoad()">
+    </a>
+    <span id="duration" [textContent]="video.duration"></span>
+    <app-spinner *ngIf="loading"></app-spinner>
+    <img *ngIf="loading && previewBlob" src="{{ previewBlob }}" id="blurred">
+    <img *ngIf="loading && !previewBlob" src="placeholder.png" id="blurred">
+</div>

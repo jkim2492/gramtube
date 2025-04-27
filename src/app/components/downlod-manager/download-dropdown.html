@@ -1,0 +1,37 @@
+<div>
+    <c-dropdown variant="btn-group">
+        <button cButton cDropdownToggle>
+            <c-badge *ngIf="downloadMap.size > 0" color="danger" position="top-end" shape="rounded-pill" [textContent]="downloadMap.size"></c-badge>
+            <fa-icon id="icon" [icon]="faDownload"></fa-icon>
+        </button>
+        <ul id="dropdown-menu" cDropdownMenu>
+            <div *ngIf="downloadMap.size > 0">
+                <li cDropdownItem *ngFor="let item of downloadMap | keyvalue">
+                    <ng-container
+                        *ngTemplateOutlet="downloadItem; context: { videoKey:item.key, item: item.value }"></ng-container>
+                </li>
+            </div>
+            <div *ngIf="downloadMap.size === 0" id="empty-text">
+                <span>Nothing here</span>
+            </div>
+        </ul>
+    </c-dropdown>
+</div>
+
+<ng-template #downloadItem let-item="item" let-videoKey="videoKey">
+    <div id="download-item">
+        <span id="download-title" [textContent]="item.title"></span>
+        <div id="ctn-progress">
+            <div class="progress" style="height: 20px">
+                <div class="progress-bar" role="progressbar" style="width: 25%" [attr.aria-valuenow]="item.progress"
+                    aria-valuemin="0" [attr.aria-valuemax]="item.total"
+                    [style.width.%]="(item.progress / item.total) * 100"
+                    [textContent]="Math.round((item.progress / item.total) * 100) + '%'">
+                </div>
+            </div>
+            <button id="btn-close" cButton type="button" (click)="cancelDownload(videoKey)" size="sm" variant="ghost">
+                <fa-icon id="icon" [icon]="faClose" class="text-danger"></fa-icon>
+            </button>
+        </div>
+    </div>
+</ng-template>

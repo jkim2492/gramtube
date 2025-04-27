@@ -1,0 +1,6 @@
+#!/bin/bash
+BASE_DIRECTORY=$(git rev-parse --show-toplevel)
+
+tsc -p "$BASE_DIRECTORY/worker/tsconfig.json" && rm -v "$BASE_DIRECTORY/src/worker.js"
+
+npx esbuild "$BASE_DIRECTORY/worker/build/worker.js" --bundle --outfile="$BASE_DIRECTORY/src/worker.js"

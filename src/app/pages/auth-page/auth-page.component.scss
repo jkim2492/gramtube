@@ -1,0 +1,17 @@
+.card-header {
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card-header h4.text-dark {
+    margin: 0; /* Remove unnecessary margins */
+  }
+  
+  .card-header span.text-danger {
+    height: 20px; /* Reserve enough vertical space */
+    display: block;
+  }
+  

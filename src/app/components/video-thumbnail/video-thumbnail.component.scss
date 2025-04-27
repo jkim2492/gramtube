@@ -1,0 +1,42 @@
+#container {
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+img {
+  object-fit: contain;
+  aspect-ratio: 16 / 9;
+  background-color: black;
+  max-height: 100%;
+  width: 100%; // DO NOT REMOVE
+}
+
+#duration {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: bold;
+  z-index: 3;
+}
+
+app-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  width: 50px;
+  height: 50px;
+  z-index: 2;
+}
+
+#blurred {
+  filter: blur(20px);
+  z-index: 1;
+}

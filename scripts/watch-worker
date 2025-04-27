@@ -1,0 +1,14 @@
+#!/bin/bash
+
+BASE_DIRECTORY=$(git rev-parse --show-toplevel)
+DIRECTORY="$BASE_DIRECTORY/worker"
+LOCK_FILE="/tmp/gramtube_worker_lock"
+
+inotifywait -m -e modify --format '%w%f' "$DIRECTORY" | while read FILE; do
+    if [[ "$FILE" =~ \.ts$ ]]; then
+        (
+            flock -n 200 || exit 0
+            echo "Detected change in $FILE. Running command..."
+        ) 200>$LOCK_FILE
+    fi
+done

@@ -1,0 +1,47 @@
+<main class="container my-4">
+  <div *ngIf="!error">
+    <div *ngIf="video">
+      <div id="ctn-video">
+        <app-video-player [video]="video"></app-video-player>
+      </div>
+      <h3 id="video-title">{{video.title}}</h3>
+      <div id="video-meta" class="text-muted">
+        <span>{{video.views}} views</span> •
+        <span>{{video.date}}</span>
+      </div>
+      <div id="ctn-channel">
+        <app-channel-avatar [channel]="video.channel"></app-channel-avatar>
+        <p [routerLink]="['/channel']" [queryParams]="{channel:video.channelId}" class="video-channel">{{
+          video.channel.title }}</p>
+      </div>
+      <div id="buttons">
+        <button (click)="manager.downloadFile(video)" class="btn btn-secondary">
+          <fa-icon id="icon" [icon]="faDownload"></fa-icon> Download
+        </button>
+        <button (click)="saveVideo()" class="btn btn-secondary">
+          <fa-icon id="icon" [icon]="faBookmark"></fa-icon> Save
+        </button>
+      </div>
+
+      <c-card color="light" id="video-description">
+        <c-card-body>
+          <app-tagged-text [description]="video.description"></app-tagged-text>
+        </c-card-body>
+      </c-card>
+    </div>
+
+    <div *ngIf="false" class="sidebar">
+      <h5 class="text-muted">From Album</h5>
+      <div class="sidebar-video d-flex mb-3">
+        <div class="sidebar-thumbnail me-3">
+          <img src="/placeholder.jpg" alt="Thumbnail" class="img-fluid rounded" />
+        </div>
+        <div>
+          <a href="#" class="sidebar-title">Another Video Title</a>
+          <div class="sidebar-meta text-muted">Channel Name • 1M views</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-error-page *ngIf="error" [errorCode]="error"></app-error-page>
+</main>

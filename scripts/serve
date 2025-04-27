@@ -1,0 +1,10 @@
+#!/bin/bash
+trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT &>/dev/null
+
+BASE_DIRECTORY=$(git rev-parse --show-toplevel)
+
+"$BASE_DIRECTORY/scripts/build-worker"
+"$BASE_DIRECTORY/scripts/watch-worker" &
+ng serve &
+
+wait

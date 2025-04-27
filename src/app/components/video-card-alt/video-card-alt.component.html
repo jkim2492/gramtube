@@ -1,0 +1,8 @@
+<div id="video-card">
+    <app-video-thumbnail [video]="video"></app-video-thumbnail>
+    <div id="video-details">
+        <a [routerLink]="['/watch']" [queryParams]="{id:video.messageId,channel:video.channelId}" id="video-title">{{
+            video.title }}</a>
+        <p id="video-meta">{{ video.views }} views • {{ video.date }}</p>
+    </div>
+</div>

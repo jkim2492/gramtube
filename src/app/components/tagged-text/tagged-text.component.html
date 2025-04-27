@@ -1,0 +1,10 @@
+<span>
+    <ng-container *ngFor="let segment of parsedText">
+        <span *ngIf="segment.isHashtag; else plainText" class="hashtag" (click)="onHashtagClick(segment.text)">
+            {{ segment.text }}
+        </span>
+        <ng-template #plainText>
+            {{ segment.text }}
+        </ng-template>
+    </ng-container>
+</span>

@@ -1,0 +1,37 @@
+<div class="container my-5">
+  <div class="row justify-content-center header">
+    <div class="col-md-6">
+      <div *ngIf="!phoneCodeHash">
+        <ng-container *ngTemplateOutlet="authDialog; context: { fields: fields.phoneNumber }"></ng-container>
+      </div>
+      <div *ngIf="phoneCodeHash">
+        <ng-container *ngTemplateOutlet="authDialog; context: { fields: fields.phoneCode }"></ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #authDialog let-fields="fields">
+  <div class="card shadow">
+    <div class="card-header text-center">
+      <div *ngIf="!isLoading">
+        <h4 class="text-dark">{{fields.header}}</h4>
+        <span class="text-danger" [innerText]="errorMsg"></span>
+      </div>
+      <app-spinner *ngIf="isLoading"></app-spinner>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="fields.onsubmit()">
+        <div class="mb-3">
+          <label [for]="fields.name" class="form-label">{{fields.label}}</label>
+          <input *ngIf="!phoneCodeHash" [readonly]="isLoading" [type]="fields.name" [id]="fields.name"
+            class="form-control" placeholder="+123456789" [(ngModel)]="phoneNumber" [name]="fields.name" required />
+          <input *ngIf="phoneCodeHash" [readonly]="isLoading" [type]="fields.name" [id]="fields.name" class="form-control"
+            [(ngModel)]="phoneCode" [name]="fields.name" required />
+        </div>
+        <button [disabled]="isLoading" type="submit" class="btn btn-primary w-100">{{fields.text}}</button>
+      </form>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,41 @@
+// // /* Ensure dropdown menu doesn't overlap other content */
+#dropdown-menu {
+  width: 40vh;
+  max-height: 30vh;
+  min-height: 10vh;
+  padding: 10px;
+}
+
+#download-title {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#download-item {
+  margin-bottom: 10px;
+}
+
+
+.progress {
+  flex: 1;
+  overflow: hidden; /* Ensures content does not overflow */
+  text-overflow: ellipsis; /* Adds ellipsis if the text overflows */
+  white-space: nowrap;
+}
+
+#ctn-progress {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+// #btn-close {
+//   flex-shrink: 1 !important;
+//   max-height: 20px !important;
+// }
+
+#empty-text{
+  text-align: center;
+}
