@@ -1,59 +1,44 @@
 # GramTube
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.4.
+Unofficial telegram client for browsing videos. Available at https://gramtube.com
+
+Made with Angular 19
+
+This project is still in alpha and has many bugs. Please open issues when you spot one!
+
+## Setup
+
+This application requires an API id from Telegram to function. [Documentation](https://core.telegram.org/api/obtaining_api_id#obtaining-api-id)
+
+Copy `src/config.ts.example` to `src/config.ts` and replace the dummy `API_ID` and `API_HASH` with your own credentials
 
 ## Development server
 
 To start a local development server, run:
 
 ```bash
-ng serve
+npm run serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
+On top of `ng serve`, this will reload the server upon modifying the service worker
 
 ## Building
 
 To build the project run:
 
 ```bash
-ng build
+npm run build
 ```
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Running unit tests
+## Todo
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- Show updates from subscription on home page
+- Better session storage management
+- Advanced search queries
+- Dark theme
 
-```bash
-ng test
-```
+## Credits
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project uses [gramjs](https://github.com/gram-js/gramjs) for interacting with Telegram
