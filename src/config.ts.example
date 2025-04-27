@@ -1,0 +1,8 @@
+export const API_ID = 12345678;
+export const API_HASH = "d41d8cd98f00b204e9800998ecf8427e";
+
+export const CHUNK_SIZE: number = 2 * 1024 * 1024;
+export const CACHE = true;
+export const ALBUM_LOOKAROUND = 20;
+export const LOAD_LIMIT = 30;
+export const SESSION_STRING = ""
